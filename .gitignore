@@ -1,0 +1,15 @@
+# Design files
+*.sketch
+*.fig
+*.xd
+design/
+
+# Documentation
+style-guide.md
+
+# System files
+.DS_Store
+
+# Configuration files
+.prettierignore
+.vscode
