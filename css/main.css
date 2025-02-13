@@ -1,0 +1,234 @@
+@import url("https://api.fonts.coollabs.io/css2?family=Rubik:wght@300..900&display=swap");
+/* =================
+   Typography
+   ================= */
+/* =================
+   Colors
+   ================= */
+/* =================
+   Layout
+   ================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Rubik", sans-serif;
+  background: hsl(226, 43%, 10%);
+}
+
+h1,
+h3 {
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+section,
+div {
+  border-radius: 15px;
+}
+
+.profile,
+.stats__content {
+  background: hsl(235, 46%, 20%);
+}
+
+.stats__title, .stats__hours, .profile__name {
+  color: hsl(0, 0%, 100%);
+}
+
+.profile__report,
+.stats__previous {
+  color: hsl(236, 100%, 87%);
+  font-size: 0.9375rem;
+}
+
+.profile__button, .profile__button--active,
+.stats__title {
+  font-size: 1.125rem;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.dashboard {
+  display: grid;
+  gap: 24px;
+  width: 328px;
+  margin-block: 64px;
+}
+
+.profile__info {
+  background: hsl(246, 80%, 60%);
+  padding: 32px 34px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: center;
+}
+.profile__image {
+  width: 68px;
+  border: 3px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+  grid-row: 1/3;
+}
+.profile__buttons {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.profile__button, .profile__button--active {
+  font-family: inherit;
+  color: hsl(235, 45%, 61%);
+}
+.profile__button--active {
+  color: hsl(0, 0%, 100%);
+}
+
+.stats__background {
+  height: 40px;
+}
+.stats--work {
+  background: hsl(15, 100%, 70%) url(/images/icon-work.svg) no-repeat right 14px top -6px;
+}
+.stats--play {
+  background: hsl(195, 74%, 62%) url(/images/icon-play.svg) no-repeat right 14px top -6px;
+}
+.stats--study {
+  background: hsl(348, 100%, 68%) url(/images/icon-study.svg) no-repeat right 14px top -6px;
+}
+.stats--exercise {
+  background: hsl(145, 58%, 55%) url(/images/icon-exercise.svg) no-repeat right 14px top -6px;
+}
+.stats--social {
+  background: hsl(264, 64%, 52%) url(/images/icon-social.svg) no-repeat right 14px top -6px;
+}
+.stats--self-care {
+  background: hsl(43, 84%, 65%) url(/images/icon-self-care.svg) no-repeat right 14px top -6px;
+}
+.stats__content {
+  padding: 28px 24px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  row-gap: 6px;
+  margin-block-end: -1px;
+}
+.stats__hours {
+  font-size: 2rem;
+}
+.stats__action {
+  width: 21px;
+  height: 8px;
+  background: url(/images/icon-ellipsis.svg) no-repeat;
+}
+.stats__action, .stats__previous {
+  justify-self: end;
+}
+
+@media screen and (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    width: 620px;
+  }
+  .profile {
+    grid-column: 1/3;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .dashboard {
+    grid-template-columns: repeat(4, 1fr);
+    width: 940px;
+    margin-block: 0;
+  }
+  .profile {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+  .profile__info {
+    grid-template-columns: 1fr;
+    padding: 32px 32px 80px;
+  }
+  .profile__image {
+    grid-row: 1/2;
+    margin-block-end: 34px;
+    width: 80px;
+  }
+  .profile__name {
+    font-size: 2.5rem;
+  }
+  .profile__buttons {
+    flex-direction: column;
+    align-items: start;
+    padding: 30px;
+    gap: 22px;
+  }
+  .stats__background {
+    height: 45px;
+  }
+  .stats__content {
+    padding: 30px;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 0;
+  }
+  .stats__hours {
+    font-size: 3.5rem;
+    margin-block-start: 24px;
+    margin-block-end: 8px;
+  }
+  .stats__previous {
+    grid-row: 3/4;
+    justify-self: start;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dashboard {
+    gap: 30px;
+    width: 1100px;
+  }
+}
+.profile__button:focus, .profile__button--active:focus,
+.stats__action:focus {
+  outline: none;
+}
+
+.profile__button:focus-visible, .profile__button--active:focus-visible,
+.stats__action:focus-visible {
+  outline: 2px solid hsl(246, 80%, 60%);
+  outline-offset: 6px;
+}
+
+@media (hover: hover) {
+  .profile__button:hover, .profile__button--active:hover,
+  .stats__content:hover {
+    transition: all 0.3s ease;
+  }
+  .profile__button:hover, .profile__button--active:hover,
+  .stats__action:hover {
+    cursor: pointer;
+  }
+  .profile__button:hover, .profile__button--active:hover {
+    color: hsl(0, 0%, 100%);
+  }
+  .stats__content:hover {
+    background-color: hsl(228, 47%, 33%);
+  }
+  .stats__action:hover {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+  }
+}/*# sourceMappingURL=main.css.map */

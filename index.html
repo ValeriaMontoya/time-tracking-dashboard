@@ -9,6 +9,7 @@
   <meta name="author" content="Valeria Montoya">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/css/main.css">
 
   <title>Frontend Mentor | Time tracking dashboard</title>
 
@@ -17,7 +18,7 @@
 <body>
 
   <main class="dashboard">
-    <section>
+    <section class="profile">
       <div class="profile__info">
         <img class="profile__image" src="/images/image-jeremy.png" alt="Jeremy Robson">
         <p class="profile__report">Report for</p>
@@ -31,10 +32,10 @@
     </section>
 
     <section class="stats stats--work">
-      <div class="stats__background stats__background--work"></div>
+      <div class="stats__background"></div>
       <div class="stats__content">
         <h2 class="stats__title">Work</h2>
-        <img src="/images/icon-ellipsis.svg" alt="Ellipsis icon">
+        <button class="stats__action"></button>
         <h3 class="stats__hours"><span class="stats__current"></span>hrs</h3>
         <p class="stats__previous"><span class="stats__period">Previous</span> - <span class="stats__value"></span>hrs
         </p>
@@ -42,50 +43,54 @@
     </section>
 
     <section class="stats stats--play">
-      <div class="stats__background stats__background--play"></div>
+      <div class="stats__background"></div>
       <div class="stats__content">
         <h2 class="stats__title">Play</h2>
-        <img src="/images/icon-ellipsis.svg" alt="Ellipsis icon">
+        <button class="stats__action"></button>
         <h3 class="stats__hours"><span class="stats__current"></span>hrs</h3>
         <p class="stats__previous"><span class="stats__period">Previous</span> - <span class="stats__value"></span>hrs
         </p>
       </div>
     </section>
+
     <section class="stats stats--study">
-      <div class="stats__background stats__background--study"></div>
+      <div class="stats__background"></div>
       <div class="stats__content">
         <h2 class="stats__title">Study</h2>
-        <img src="/images/icon-ellipsis.svg" alt="Ellipsis icon">
+        <button class="stats__action"></button>
         <h3 class="stats__hours"><span class="stats__current"></span>hrs</h3>
         <p class="stats__previous"><span class="stats__period">Previous</span> - <span class="stats__value"></span>hrs
         </p>
       </div>
     </section>
+
     <section class="stats stats--exercise">
-      <div class="stats__background stats__background--exercise"></div>
+      <div class="stats__background"></div>
       <div class="stats__content">
         <h2 class="stats__title">Exercise</h2>
-        <img src="/images/icon-ellipsis.svg" alt="Ellipsis icon">
+        <button class="stats__action"></button>
         <h3 class="stats__hours"><span class="stats__current"></span>hrs</h3>
         <p class="stats__previous"><span class="stats__period">Previous</span> - <span class="stats__value"></span>hrs
         </p>
       </div>
     </section>
+
     <section class="stats stats--social">
-      <div class="stats__background stats__background--social"></div>
+      <div class="stats__background"></div>
       <div class="stats__content">
         <h2 class="stats__title">Social</h2>
-        <img src="/images/icon-ellipsis.svg" alt="Ellipsis icon">
+        <button class="stats__action"></button>
         <h3 class="stats__hours"><span class="stats__current"></span>hrs</h3>
         <p class="stats__previous"><span class="stats__period">Previous</span> - <span class="stats__value"></span>hrs
         </p>
       </div>
     </section>
+    
     <section class="stats stats--self-care">
-      <div class="stats__background stats__background--self-care"></div>
+      <div class="stats__background"></div>
       <div class="stats__content">
         <h2 class="stats__title">Self Care</h2>
-        <img src="/images/icon-ellipsis.svg" alt="Ellipsis icon">
+        <button class="stats__action"></button>
         <h3 class="stats__hours"><span class="stats__current"></span>hrs</h3>
         <p class="stats__previous"><span class="stats__period">Previous</span> - <span class="stats__value"></span>hrs
         </p>
