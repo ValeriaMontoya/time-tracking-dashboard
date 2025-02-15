@@ -12,31 +12,36 @@ async function fetchData() {
   }
 }
 
-function updateStats(data, selectedPeriod, periodLabel) {
+async function updateStats(period, periodLabel) {
+  const data = await fetchData();
+
   data.forEach((element, i) => {
-    currentTimeValues[i].textContent = `${element.timeframes[selectedPeriod].current}`;
+    currentTimeValues[i].textContent = `${element.timeframes[period].current}`;
     customPeriod[i].textContent = periodLabel;
-    previousTimeValues[i].textContent = `${element.timeframes[selectedPeriod].previous}`;
+    previousTimeValues[i].textContent = `${element.timeframes[period].previous}`;
   });
 }
 
 buttons.forEach((button) => {
-  button.addEventListener('click', async (event) => {
-    const period = event.target.id;
-    const data = await fetchData();
+  button.addEventListener('click', (event) => {
+    const clickedButton = event.target;
+    const period = clickedButton.id;
 
-    buttons.forEach((button) => button.classList.remove('profile__button--active'));
-    event.target.classList.add('profile__button--active');
+    buttons.forEach((button) =>
+      button === clickedButton
+        ? button.classList.add('profile__button--active')
+        : button.classList.remove('profile__button--active')
+    );
 
     switch (period) {
       case 'daily':
-        updateStats(data, 'daily', 'Yesterday');
+        updateStats(period, 'Yesterday');
         break;
       case 'weekly':
-        updateStats(data, 'weekly', 'Last Week');
+        updateStats(period, 'Last Week');
         break;
       case 'monthly':
-        updateStats(data, 'monthly', 'Last Month');
+        updateStats(period, 'Last Month');
         break;
     }
   });
@@ -44,6 +49,7 @@ buttons.forEach((button) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const defaultButton = document.getElementById('weekly');
+  
   if (defaultButton) {
     defaultButton.click();
   }
